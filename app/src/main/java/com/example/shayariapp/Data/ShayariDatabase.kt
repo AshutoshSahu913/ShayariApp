@@ -10,7 +10,7 @@ import com.example.shayariapp.Data.data_models.AllShayariCategory
 
 @Database(
     entities = arrayOf(AllShayariCategory::class, AllShayari::class),
-    version = 1,
+    version = 2,
     exportSchema = true
 )
 abstract class ShayariDatabase : RoomDatabase() {
@@ -20,7 +20,8 @@ abstract class ShayariDatabase : RoomDatabase() {
         fun DbBuilder(context: Context): ShayariDatabase {
             return Room.databaseBuilder(
                 context, ShayariDatabase::class.java, "Shayari.db"
-            ).createFromAsset("Shayari.db").build()
+            ).allowMainThreadQueries().fallbackToDestructiveMigration()
+                .createFromAsset("Shayari.db").build()
         }
     }
 }

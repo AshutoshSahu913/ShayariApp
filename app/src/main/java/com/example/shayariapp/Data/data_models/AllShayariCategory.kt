@@ -6,8 +6,8 @@ import androidx.room.PrimaryKey
 
 @Entity(tableName = "AllShayariCategory")
 class AllShayariCategory(
-    @PrimaryKey(autoGenerate = true) @ColumnInfo("uid") var id: Int? = null,
-    var name: String,
-    @ColumnInfo("id") var CategoryId: Int
+    @PrimaryKey(autoGenerate = true) var uid: Int? = null,
+    var name: String?,
+    var id: Int?
 
 )

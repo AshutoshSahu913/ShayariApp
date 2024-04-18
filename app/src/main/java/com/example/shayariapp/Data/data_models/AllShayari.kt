@@ -9,7 +9,7 @@ class AllShayari(
     @PrimaryKey(autoGenerate = true)
     @ColumnInfo("uid")
     var id: Int? = null,
-    var Cat_id: Int,
-    var Shayari: String
+    var Cat_id: Int?,
+    var Shayari: String?
 
 )
